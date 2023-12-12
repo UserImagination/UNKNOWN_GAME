@@ -1,0 +1,51 @@
+UNKNOWN_GAME:STORE
+
+
+Class:Item
+Class:Inventory
+Class:Player
+
+
+Class:Store
+	Enterstore
+	-WelcomeMessage
+	-ListOptions
+
+	1. Option: selectChat - Player selects 'Chat w Shopkeeper'
+	2. Option: selectLeave - Player selects 'Leave Store'
+
+
+	3. Option: selectPurchase - Player selects 'Purchase Items' 
+	-Display shop inventory
+	-Display wallet
+
+		If player selects item to purchase
+		-check if the price will make the cart total exceed the wallet
+		--if yes, "you won't have enough. empty cart and start over or fuk off"
+		--if no,
+			-Update Cart
+			-Add price to CartTotal
+			-Remove item from shop inventory
+			-List items in cart
+		
+		If player selects checkout
+		-Check if there's anything in the cart
+		--if not, 
+			-"you don't have anything in your cart yet dummy"
+
+		--if YAS, 
+			-Check if cart total < wallet
+			--if not, "you don't have enough peasant"
+			--if yas, 
+				subtract money from wallet
+				add items to player inventory
+				remove items from cart
+				add money to shop money	
+	
+	-Display 
+
+
+	4. Option: selectSell - Player selects 'Sell Items'
+
+
+
